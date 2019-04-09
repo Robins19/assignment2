@@ -1,0 +1,36 @@
+<div>
+              <div class="tourofheroParent">
+                        <div class="tourofheroapiChild">
+                                   Tour Of Heroes
+                         </div>
+               </div>
+
+               <div class="row" ng-controller="logoutController">
+                      <div class="col-sm-12 well"ng-controller="DashboardController">  
+                             <a ui-sref="Dashboard" ng-click="Dashboard()" ng-show="Dash">Dashboard</a> <!--Dashboard navigation button-->
+                             <a ui-sref="Heroes" ng-click="hero()">Heroes</a>                            <!--Heroes navigation button-->
+                             <a class="Logout" ui-sref="Logout" ng-click="deleteItems()">Logout</a>       <!--Logout navigation button-->
+                       </div>
+                </div>
+
+               <div class="heroParent">
+                      <div class="myheroChild">
+                              My Heroes
+                       </div>
+               </div> <br><br>
+
+        <div class="hero" ng-repeat="hero in topHeroes" ng-click="display(hero)">
+
+                <p  class="heroname"><strong class="idclass">{{hero.id}}</strong> {{hero.first_name}}</p> <!--our clickable hero name and id-->
+       </div>
+
+        <div ng-show="showHero" ng-controller="DashboardController">
+               <h1 ng-show="Dash">Mr <strong>{{user.first_name}}</strong> is My Hero</h1>
+                <button ng-click="viewDetails()" ng-show="Dash">View DEtails</button>    <!--heroViewdetails navigation button-->
+        </div>
+
+        <ui-view></ui-view>       <!--Heroes view-->
+        
+
+
+</div>

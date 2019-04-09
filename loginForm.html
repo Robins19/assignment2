@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="login.css">
+</head>
+<ui-view>
+
+    <body>
+        <div class="parent">
+            <div class="child">
+                Tour Of Heroes
+            </div>
+        </div>
+
+
+
+        <div class="row" ng-controller="logoutController">
+            <div class="col-sm-12 well">
+                <a ui-sref="Dashboard" ng-click="Dashboard()" ng-show="Dash">Dashboard</a>
+                <a ui-sref="Heroes" ng-click="hero()">Heroes</a>
+                <a class="Logout" ui-sref="Logout" ng-click="deleteItems()">Logout</a>
+            </div>
+        </div>
+        <div class="parentTopHeroes">
+            <div class="childTopHeroes">
+                Top Heroes
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+
+            <div class="hero" ng-repeat="hero in Heroes"ng-show="Dash">
+                <div ui-sref="api({userid:{{hero.id}},username:{{'hero.first_name'}}})" class="box">
+                    {{hero.first_name}}
+                </div>
+            </div>
+
+        </div>
+    </body>
+</ui-view>
+
+</html>

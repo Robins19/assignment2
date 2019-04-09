@@ -1,0 +1,33 @@
+<div>
+                     <div class="apiParent">
+                                 <div class="apiChild">
+                                          Tour Of Heroes
+                                  </div>
+                     </div>
+                  <div class="row" ng-controller="logoutController">
+                                <div class="col-sm-12 well" ng-controller="DashboardController"> 
+                                       <a ui-sref="Dashboard" ng-click="Dashboard()" ng-show="Dash">Dashboard</a><!--Dashboard navigation button-->
+                                       <a ui-sref="Heroes" ng-click="hero()">Heroes</a>                   <!--Heroes navigation button-->
+                                      <a class="Logout" ui-sref="Logout" ng-click="deleteItems()">Logout</a> <!--Logout navigation button-->
+                                 </div>
+                   </div>
+
+                  <p class="firstname"> {{name }} Details</p>
+                     <div>
+                          <p> Id: {{useridget}}</p>
+                     </div>
+                  <form name="formName"novalidate>
+                         Name: <input ng-model="name" name="name" required=""><br><br>
+                                   <div ng-show="formName.$submitted || formName.name.$touched">
+                                       <div ng-show=" formName.name.$error.required">Please fill your name</div><!--Details form validation of name-->
+                                    </div>
+                         Job: <select ng-model="job" ng-options="x for x in names" name="jobname" required="">
+                              </select><br><br>
+                              <div ng-show="formName.$submitted || formName.jobname.$touched">                  <!--Details form validation of job-->
+                              <div ng-show=" formName.jobname.$error.required">Please select your jobname</div>
+                               </div>
+ 
+                              <input type="submit" value="back" ng-click="Back()">
+                              <input type="submit" value="submit" ng-submit="Submit()" ng-click="Submit()"><!--form submit button-->
+                  </form>
+</div>

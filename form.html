@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="login.css">
+    </head> 
+    <body>
+      
+       <div class="login">
+            <h2>Login</h2>
+            <form name="formName" novalidate>
+                <input type="email" name="email" ng-model="email" required><br><br>      <!-- User and admin name  -->
+                <div ng-show="formName.$submitted || formName.email.$touched">
+                    <span ng-show=" formName.email.$error.required">Please fill your email</span>
+                    <span ng-show=" formName.email.$error.email">Plase fill valid email</span>
+                </div>
+                <input type="password" name="password" ng-model="password" required><br><br>    <!-- password for user -->
+                <input type="submit" value="Login" ng-click="submit()">
+            </form>
+           
+        </div>
+    
+    </body> 
+</html>

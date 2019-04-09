@@ -1,0 +1,29 @@
+<div class="topheroparent" >
+    <div class="topherochild">
+        Tour Of Heroes
+    </div>
+</div>
+<div class="topheroes" >
+           
+            <a ui-sref="Heroes"ng-click="hero()">Heroes</a>
+             <a  class="Logout" ui-sref="Logout" ng-click="deleteItems()">Logout</a> 
+        </div>
+        <div class="topheroesParent" >
+            <div class="topheroesChild">
+                      My Heroes
+             </div>
+    </div > <br><br>
+    <ui-view>
+        <div class="hero" ng-repeat="hero in topHeroes" ng-click="display(hero)">
+            
+                    <p class="heroname"><strong class="idclass">{{hero.id}}</strong>  {{hero.first_name}}</p>
+                    
+       
+           </div>
+
+           <div ng-show="showHero" >
+                   <h2><strong>{{user.first_name}}</strong></h2>
+                   <button ng-click="viewDetails()">View DEtails</button>  
+           </div>
+           </ui-view>
+
